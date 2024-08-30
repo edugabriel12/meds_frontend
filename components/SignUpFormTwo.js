@@ -59,7 +59,7 @@ const SignUpFormOne = ({ navigation }) => {
               />
             </TouchableOpacity>
             <TouchableOpacity style={styles.finishButton}>
-            <Text style={styles.finishButtonText}>Finalizar</Text>  
+              <Text style={styles.finishButtonText}>Finalizar</Text>  
             </TouchableOpacity>
           </View>
         </View>

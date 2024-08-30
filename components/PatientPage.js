@@ -1,19 +1,18 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
 
-const HomeScreen = ({ navigation }) => {
+const PatientPage = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
                 <View style={styles.header}>
-                    <TouchableOpacity style={styles.menuIconContainer} onPress={() => { /* Abrir menu */ }}>
+                    <TouchableOpacity style={styles.backIconContainer} onPress={() => { /* Abrir menu */ }}>
                         <Image
-                            source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1828/1828859.png' }}
-                            style={styles.menuIcon}
+                            source={{ uri: 'https://cdn-icons-png.flaticon.com/512/93/93634.png' }}
+                            style={styles.backIcon}
                         />
                     </TouchableOpacity>
-                    <Image source={require('../images/doctor.png')} style={styles.icon} />
-                    <Text style={styles.headerTitle}>Meds</Text>
+                    <Text style={styles.headerTitle}>Todos os seus pacientes</Text>
                     <Image
                         source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
                         style={styles.profileIcon}
@@ -32,35 +31,10 @@ const HomeScreen = ({ navigation }) => {
                     />
                 </View>
 
-                <View style={styles.actionsContainer}>
-                    <TouchableOpacity style={styles.actionButton}>
-                        <Image
-                            source={require('../images/stethoscope.png')}
-                            style={styles.actionIcon}
-                        />
-                        <Text style={styles.actionText}>Nova Evolução</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.actionButton}>
-                        <Image
-                            source={require('../images/patient.png')}
-                            style={styles.actionIcon}
-                        />
-                        <Text style={styles.actionText}>Novo Paciente</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.actionButton}>
-                        <Image
-                            source={{ uri: 'https://cdn-icons-png.flaticon.com/512/685/685655.png' }}
-                            style={styles.actionIcon}
-                        />
-                        <Text style={styles.actionText}>Anexar Imagens</Text>
-                    </TouchableOpacity>
-                </View>
-
                 <View style={styles.patientsContainer}>
                     <View style={styles.patientsHeader}>
-                        <Text style={styles.sectionTitle}>Seus pacientes</Text>
                         <TouchableOpacity onPress={() => { /* Navegar para lista completa de pacientes */ }}>
-                            <Text style={styles.seeAllText}>Veja todos</Text>
+                            <Text style={styles.seeAllText}>Página 1/2</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -147,22 +121,91 @@ const HomeScreen = ({ navigation }) => {
                             <Text style={styles.dateText}>09 Ago</Text>
                         </View>
                     </View>
+
+                    <View style={styles.patientCard}>
+                        <View style={styles.patientInfo}>
+                            <Text style={styles.patientName}>Róger Guedes</Text>
+                            <Text style={styles.patientDetails}>Diagnóstico: I10 - Hipertensão</Text>
+                            <Text style={styles.patientDetails}>Leito: 09</Text>
+                            <View style={styles.patientStatus}>
+                                <View style={styles.statusDotYellow}></View>
+                                <Text style={styles.statusText}>Alerta</Text>
+                            </View>
+                        </View>
+                        <TouchableOpacity>
+                            <Image
+                                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}
+                                style={styles.nextIcon}
+                            />
+                        </TouchableOpacity>
+                        <View style={styles.patientDate}>
+                            <Text style={styles.dateText}>09 Ago</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.patientCard}>
+                        <View style={styles.patientInfo}>
+                            <Text style={styles.patientName}>Róger Guedes</Text>
+                            <Text style={styles.patientDetails}>Diagnóstico: I10 - Hipertensão</Text>
+                            <Text style={styles.patientDetails}>Leito: 09</Text>
+                            <View style={styles.patientStatus}>
+                                <View style={styles.statusDotYellow}></View>
+                                <Text style={styles.statusText}>Alerta</Text>
+                            </View>
+                        </View>
+                        <TouchableOpacity>
+                            <Image
+                                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}
+                                style={styles.nextIcon}
+                            />
+                        </TouchableOpacity>
+                        <View style={styles.patientDate}>
+                            <Text style={styles.dateText}>09 Ago</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.patientCard}>
+                        <View style={styles.patientInfo}>
+                            <Text style={styles.patientName}>Róger Guedes</Text>
+                            <Text style={styles.patientDetails}>Diagnóstico: I10 - Hipertensão</Text>
+                            <Text style={styles.patientDetails}>Leito: 09</Text>
+                            <View style={styles.patientStatus}>
+                                <View style={styles.statusDotYellow}></View>
+                                <Text style={styles.statusText}>Alerta</Text>
+                            </View>
+                        </View>
+                        <TouchableOpacity>
+                            <Image
+                                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}
+                                style={styles.nextIcon}
+                            />
+                        </TouchableOpacity>
+                        <View style={styles.patientDate}>
+                            <Text style={styles.dateText}>09 Ago</Text>
+                        </View>
+                    </View>
+                </View>
+
+                <View style={styles.paginationContainer}>
+                    <TouchableOpacity style={styles.pageButton}>
+                        <Image
+                            source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271220.png' }}
+                            style={styles.previousPageIcon}
+                        />
+                        <Text style={styles.previousPageText}>Página anterior</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.pageButton}>
+                        <Text style={styles.nextPageText}>Próxima página</Text>
+                        <Image
+                            source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}
+                            style={styles.nextPageIcon}
+                        />
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
             <View style={styles.bottomNav}>
-                <TouchableOpacity style={[styles.navButton, styles.navButtonActive]}>
-                    <Image
-                        source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1946/1946436.png' }}
-                        style={styles.navIcon}
-                    />
-                    <Text style={styles.navText}>Início</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navButton}>
-                    <Image
-                        source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png' }}
-                        style={styles.navIcon}
-                    />
-                    <Text style={styles.navText}>Perfil</Text>
+                <TouchableOpacity style={styles.addPatientButton}>
+                    <Text style={styles.addPatientButtonText}>Adicionar Paciente</Text>  
                 </TouchableOpacity>
             </View>
         </View>
@@ -185,7 +228,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 10,
-        backgroundColor: '#003366',
         position: 'absolute',
         top: 0,
         left: 0,
@@ -193,19 +235,19 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         height: 80
     },
-    menuIconContainer: {
+    backIconContainer: {
         position: 'absolute',
         left: 20,
     },
-    menuIcon: {
-        width: 24,
-        height: 24,
-        tintColor: '#fff',
+    backIcon: {
+        width: 28,
+        height: 28,
+        tintColor: '#1a2c48',
     },
     headerTitle: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#fff',
+        color: '#1a2c48',
     },
     profileIcon: {
         width: 40,
@@ -220,7 +262,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 25,
         paddingHorizontal: 15,
-        marginTop: 110,
+        marginTop: 100,
     },
     searchInput: {
         flex: 1,
@@ -241,38 +283,12 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         tintColor: '#fff',
     },
-    actionsContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 20,
-    },
-    actionButton: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 10,
-        backgroundColor: '#fff',
-        borderRadius: 10,
-        marginHorizontal: 5,
-        height: 100,
-    },
-    actionIcon: {
-        width: 36,
-        height: 36,
-        marginBottom: 10,
-        tintColor: '#007bff',
-    },
-    actionText: {
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: '#333',
-    },
     patientsContainer: {
         marginTop: 20,
     },
     patientsHeader: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         marginBottom: 10,
     },
@@ -282,8 +298,8 @@ const styles = StyleSheet.create({
         color: '#333',
     },
     seeAllText: {
-        fontSize: 14,
-        color: '#007bff',
+        fontSize: 16,
+        color: '#333',
     },
     patientCard: {
         flexDirection: 'row',
@@ -385,32 +401,57 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    
-    navButtonActive: {
-        backgroundColor: '#ffffff',
-        padding: 10,
-        paddingVertical: 10,
-        paddingHorizontal: 40,
+    addPatientButton: {
+        width: 50,
+        height: 50,
         borderRadius: 25,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.3,
-        shadowRadius: 4.65,
-        elevation: 12,
-    },
-    
-    navIcon: {
-        width: 24,
-        height: 24,
-        marginBottom: 5,
-        tintColor: '#003366',
-    },
-    
-    navText: {
-        fontSize: 14,
+        backgroundColor: '#003366',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 0,
+        paddingHorizontal: 20,
+        minWidth: 380,
+      },
+    addPatientButtonText: {
+        color: '#fff',
+        fontSize: 24,
         fontWeight: 'bold',
-        color: '#003366',
+        textAlign: 'center',
+      },
+    paginationContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 5,
+        paddingHorizontal: 20,
+        paddingBottom: 10,
+    },
+    pageButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    nextPageIcon: {
+        width: 22,
+        height: 22,
+        tintColor: '#333',
+        marginRight: -20,
+    },
+    previousPageIcon: {
+        width: 22,
+        height: 22,
+        tintColor: '#333',
+        marginLeft: -20,
+    },
+    nextPageText: {
+        fontSize: 16,
+        color: '#333',
+        marginRight: 5,
+    },
+    previousPageText: {
+        fontSize: 16,
+        color: '#333',
+        marginLeft: 5,
     },
 });
 
-export default HomeScreen;
+export default PatientPage;
