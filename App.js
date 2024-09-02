@@ -5,8 +5,8 @@ import Login from './components/Login';
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Login />
-    </SafeAreaView>
+      <Login/>
+    </SafeAreaView> 
   );
 };
 

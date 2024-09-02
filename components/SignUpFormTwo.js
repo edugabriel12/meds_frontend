@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
 
-const SignUpFormOne = ({ navigation }) => {
+const SignUpFormTwo = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
@@ -55,7 +55,7 @@ const SignUpFormOne = ({ navigation }) => {
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
               <Image
                 source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}
-                style={styles.backIcon}
+                style={styles.footerBackIcon}
               />
             </TouchableOpacity>
             <TouchableOpacity style={styles.finishButton}>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: '#003366',
+    backgroundColor: '#1a2c48',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
@@ -167,14 +167,14 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: '#003366',
+    backgroundColor: '#1a2c48',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
     paddingHorizontal: 20,
     minWidth: 110,
   },
-  backIcon: {
+  footerBackIcon: {
     width: 24,
     height: 24,
     tintColor: '#fff',
@@ -188,4 +188,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUpFormOne;
+export default SignUpFormTwo;
