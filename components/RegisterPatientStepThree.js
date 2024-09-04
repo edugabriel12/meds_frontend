@@ -14,7 +14,7 @@ const PatientSignUpFormThree = () => {
             style={styles.backIcon}
           />
         </TouchableOpacity> 
-        <Text style={styles.headerTitle}>Adicionar paciente</Text>
+        <Text style={styles.headerTitle}>Adicionar Paciente</Text>
         <Image
           source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
           style={styles.profileIcon}
