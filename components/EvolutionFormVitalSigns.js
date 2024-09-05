@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Switch, Dimensions, ScrollView } from 'react-native';
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
 
-const PatientSignUpFormTwo = () => {
-  const [isAddressVisible, setIsAddressVisible] = useState(false);
-
-  const toggleAddressVisibility = () => setIsAddressVisible(previousState => !previousState);
-
+const EvolutionFormVitalSigns = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
@@ -15,7 +11,7 @@ const PatientSignUpFormTwo = () => {
             style={styles.backIcon}
           />
         </TouchableOpacity> 
-        <Text style={styles.headerTitle}>Adicionar Paciente</Text>
+        <Text style={styles.headerTitle}>Adicionar Evolução</Text>
         <Image
           source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
           style={styles.profileIcon}
@@ -23,72 +19,52 @@ const PatientSignUpFormTwo = () => {
       </View>
 
       <View style={styles.formContainer}>
-        <View style={styles.toggleContainer}>
-          <Image source={require("../images/silhueta-de-icone-de-casa.png")} style={styles.icon} />
-          <Text style={styles.toggleLabel}>Adicionar Endereço ?</Text>
-          <Switch
-            trackColor={{ false: "#767577", true: "#1a2c48" }}
-            thumbColor={isAddressVisible ? "#1a2c48" : "#f4f3f4"}
-            onValueChange={toggleAddressVisibility}
-            value={isAddressVisible}
-          />
-        </View>
+      <Text style={styles.descriptionText}>Sinais Vitais:</Text>
 
-        {isAddressVisible && (
-          <>
-            <Text style={styles.label}>Rua *</Text>
-            <TextInput
-              placeholder="Rua"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
+        <Text style={styles.label}>Frequência Cardíaca *</Text>
+        <TextInput
+          placeholder="Frequência Cardíaca (bpm)"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
 
-            <Text style={styles.label}>Número *</Text>
-            <TextInput
-              placeholder="Número"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
+        <Text style={styles.label}>Frequência Respiratória *</Text>
+        <TextInput
+          placeholder="Frequência Respiratória (ipm)"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
 
-            <Text style={styles.label}>Bairro *</Text>
-            <TextInput
-              placeholder="Bairro"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
+        <Text style={styles.label}>Pressão Arterial *</Text>
+        <TextInput
+          placeholder="Sistólica/Diastólica (mmHg)"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
 
-            <Text style={styles.label}>Complemento</Text>
-            <TextInput
-              placeholder="Complemento"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
+        <Text style={styles.label}>Hemoglobina Glicada *</Text>
+        <TextInput
+          placeholder="HGT"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
 
-            <Text style={styles.label}>CEP *</Text>
-            <TextInput
-              placeholder="CEP"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
+        <Text style={styles.label}>Temperatura *</Text>
+        <TextInput
+          placeholder="Temperatura"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
 
-            <Text style={styles.label}>Cidade *</Text>
-            <TextInput
-              placeholder="Cidade"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Estado *</Text>
-            <TextInput
-              placeholder="Estado"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-          </>
-        )}
+        <Text style={styles.label}>Saturação de Oxigênio *</Text>
+        <TextInput
+          placeholder="Saturação de Oxigênio"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
 
         <View style={styles.footer}>
-          <Text style={styles.stepText}>Passo 2 | 3</Text>
+          <Text style={styles.stepText}>Passo 1 | 5</Text>
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
               <Image
@@ -165,6 +141,12 @@ const styles = StyleSheet.create({
     maxWidth: 350,
     paddingTop: 100,
   },
+  descriptionText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#1a2c48',
+    marginBottom: 20,
+  },
   toggleContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -184,13 +166,6 @@ const styles = StyleSheet.create({
     color: '#1a2c48',
     flex: 1,
     marginBottom: 10,
-  },
-  toggleLabel: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#1a2c48',
-    flex: 1,
-    marginLeft: 10,
   },
   inputField: {
     width: '100%',
@@ -253,4 +228,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PatientSignUpFormTwo;
+export default EvolutionFormVitalSigns;

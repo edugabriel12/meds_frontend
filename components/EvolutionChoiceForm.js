@@ -153,7 +153,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#1a2c48',
     flex: 1,
-    marginLeft: 10,
   },
   icon: {
     width: 24,

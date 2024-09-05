@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Switch, Dimensions, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 
-const PatientSignUpFormTwo = () => {
-  const [isAddressVisible, setIsAddressVisible] = useState(false);
-
-  const toggleAddressVisibility = () => setIsAddressVisible(previousState => !previousState);
+const EvolutionFormSymptoms = () => {
+  const [selectedState, setSelectedState] = useState("Alta");
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -15,7 +14,7 @@ const PatientSignUpFormTwo = () => {
             style={styles.backIcon}
           />
         </TouchableOpacity> 
-        <Text style={styles.headerTitle}>Adicionar Paciente</Text>
+        <Text style={styles.headerTitle}>Adicionar Evolução</Text>
         <Image
           source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
           style={styles.profileIcon}
@@ -23,72 +22,38 @@ const PatientSignUpFormTwo = () => {
       </View>
 
       <View style={styles.formContainer}>
-        <View style={styles.toggleContainer}>
-          <Image source={require("../images/silhueta-de-icone-de-casa.png")} style={styles.icon} />
-          <Text style={styles.toggleLabel}>Adicionar Endereço ?</Text>
-          <Switch
-            trackColor={{ false: "#767577", true: "#1a2c48" }}
-            thumbColor={isAddressVisible ? "#1a2c48" : "#f4f3f4"}
-            onValueChange={toggleAddressVisibility}
-            value={isAddressVisible}
-          />
+      <Text style={styles.descriptionText}>Sintomas:</Text>
+
+      <Text style={styles.label}>Descrição dos Sintomas *</Text>
+        <TextInput
+          style={[styles.inputField, { height: 100 }]}
+          placeholderTextColor="#a9a9a9"
+          multiline={true}
+          numberOfLines={5}
+        />
+
+        <Text style={styles.label}>Severidade</Text>
+        <View style={styles.pickerContainer}>
+          <Picker
+            selectedValue={selectedState}
+            onValueChange={(itemValue, itemIndex) => setSelectedState(itemValue)}
+            style={styles.picker}
+          >
+            <Picker.Item label="Alta" value="Alta" />
+            <Picker.Item label="Média" value="Média" />
+            <Picker.Item label="Baixa" value="Baixa" />
+          </Picker>
         </View>
 
-        {isAddressVisible && (
-          <>
-            <Text style={styles.label}>Rua *</Text>
-            <TextInput
-              placeholder="Rua"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Número *</Text>
-            <TextInput
-              placeholder="Número"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Bairro *</Text>
-            <TextInput
-              placeholder="Bairro"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Complemento</Text>
-            <TextInput
-              placeholder="Complemento"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>CEP *</Text>
-            <TextInput
-              placeholder="CEP"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Cidade *</Text>
-            <TextInput
-              placeholder="Cidade"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Estado *</Text>
-            <TextInput
-              placeholder="Estado"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-          </>
-        )}
+        <Text style={styles.label}>Data da Queixa *</Text>
+        <TextInput
+          placeholder="dd/mm/yy"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
 
         <View style={styles.footer}>
-          <Text style={styles.stepText}>Passo 2 | 3</Text>
+          <Text style={styles.stepText}>Passo 2 | 5</Text>
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
               <Image
@@ -165,6 +130,12 @@ const styles = StyleSheet.create({
     maxWidth: 350,
     paddingTop: 100,
   },
+  descriptionText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#1a2c48',
+    marginBottom: 20,
+  },
   toggleContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -185,13 +156,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginBottom: 10,
   },
-  toggleLabel: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#1a2c48',
-    flex: 1,
-    marginLeft: 10,
-  },
   inputField: {
     width: '100%',
     height: 50,
@@ -201,6 +165,20 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     borderWidth: 1,
     backgroundColor: '#f0f0f0',
+  },
+  pickerContainer: {
+    width: '100%',
+    height: 50,
+    marginBottom: 25,
+    borderRadius: 25,
+    borderColor: '#ddd',
+    borderWidth: 1,
+    backgroundColor: '#f0f0f0',
+    justifyContent: 'center',
+  },
+  picker: {
+    width: '100%',
+    height: '100%',
   },
   footer: {
     flexDirection: 'row',
@@ -253,4 +231,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PatientSignUpFormTwo;
+export default EvolutionFormSymptoms;
