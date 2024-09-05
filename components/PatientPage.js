@@ -12,7 +12,7 @@ const PatientPage = ({ navigation }) => {
                             style={styles.backIcon}
                         />
                     </TouchableOpacity>
-                    <Text style={styles.headerTitle}>Todos os seus pacientes</Text>
+                    <Text style={styles.headerTitle}>Seus pacientes</Text>
                     <Image
                         source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
                         style={styles.profileIcon}
