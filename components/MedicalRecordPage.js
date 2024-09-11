@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
     position: 'relative',
-    elevation: 2, // Adds shadow for card effect
+    elevation: 2,
   },
   sectionTitle: {
     fontSize: 18,
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#666',
     marginBottom: 2,
-    lineHeight: 20, // Added lineHeight for better readability
+    lineHeight: 20,
     flexWrap: 'wrap',
   },
   patientFooter: {
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     width: 22,
     height: 22,
     tintColor: '#333',
-    marginRight: 0, // Adjusted position of the next icon
+    marginRight: 0,
   },
   underline: {
     height: 1,
