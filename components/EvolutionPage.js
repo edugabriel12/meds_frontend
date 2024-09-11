@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
 
-const PatientInfoPage = ({ navigation }) => {
+const EvolutionPage = ({ navigation }) => {
   return (
     <View style={styles.container}> 
       <ScrollView contentContainerStyle={styles.container}>
@@ -15,107 +15,65 @@ const PatientInfoPage = ({ navigation }) => {
         </View>
 
         <View style={styles.profileHeader}>
-          <Text style={styles.headerTitle}>Yuri Alberto</Text>
-          <View style={styles.detailsContainer}>
-            <Text style={styles.detailBadge}>27 anos</Text>
-            <Text style={styles.detailBadge}>Homem</Text>
-          </View>
+          <Text style={styles.headerTitle}>Evolução de Yuri Alberto</Text>
         </View>
 
         <View style={styles.infoContainer}>
           <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Altura</Text>
-            <Text style={styles.infoValue}>182 cm</Text>
+            <Text style={styles.infoLabel}>Descrição</Text>
+            <Text style={styles.infoValue}>Paciente responde bem ao tratamento, sem febre nas últimas 24 horas. Além disso, o paciente não se queixa mais de dores.</Text>
           </View>
           <View style={styles.underline} />
 
           <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Peso</Text>
-            <Text style={styles.infoValue}>78 kg</Text>
-          </View>
-          <View style={styles.underline} />
-
-          <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Telefone</Text>
-            <Text style={styles.infoValue}>87 4002-8922</Text>
-          </View>
-          <View style={styles.underline} />
-
-          <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Data de Admissão</Text>
+            <Text style={styles.infoLabel}>Data da Evolução</Text>
             <Text style={styles.infoValue}>19/08/2024</Text>
           </View>
           <View style={styles.underline} />
         </View>
 
         <View style={styles.configContainer}>
-          <Text style={styles.configHeader}>Ações</Text>
+          <Text style={styles.configHeader}>Informações</Text>
           <View style={styles.configRow}>
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require('../images/prontuario-medico.png')}
+                  source={require("../images/heart-rate.png")}
                   style={styles.configIcon}
                 />
               </View>
-              <Text style={styles.configText}>Acessar Prontuário</Text>
+              <Text style={styles.configText}>Sinais Vitais</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require('../images/stethoscope.png')}
+                  source={require("../images/paciente.png")}
                   style={styles.configIcon}
                 />
               </View>
-              <Text style={styles.configText}>Adicionar Evolução</Text>
+              <Text style={styles.configText}>Sintomas</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png' }}
+                  source={require("../images/gota-de-agua.png")}
                   style={styles.configIcon}
                 />
               </View>
-              <Text style={styles.configText}>Perfil Completo</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.configRow}>
-            <TouchableOpacity style={styles.configButton}>
-              <View style={styles.configCircle}>
-                <Image
-                  source={{ uri: 'https://cdn-icons-png.flaticon.com/512/685/685655.png' }}
-                  style={styles.configIcon}
-                />
-              </View>
-              <Text style={styles.configText}>Anexar Imagens</Text>
+              <Text style={styles.configText}>Balanço</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require('../images/galeria-de-imagens.png')}
+                  source={require("../images/medical-services.png")}
                   style={styles.configIcon}
                 />
               </View>
-              <Text style={styles.configText}>Galeria de Imagens</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.configButton}>
-              <View style={styles.configCircle}>
-                <Image
-                  source={require('../images/x.png')}
-                  style={styles.configIcon}
-                />
-              </View>
-              <Text style={styles.configText}>Deletar Paciente</Text>
+              <Text style={styles.configText}>Tratamento</Text>
             </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
-
-      <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.editPatientButton}>
-          <Text style={styles.editPatientButtonText}>Editar Detalhes</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };
@@ -160,20 +118,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#1a2c48',
   },
-  detailsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 10,
-  },
-  detailBadge: {
-    backgroundColor: '#e0e0e0',
-    borderRadius: 20,
-    paddingHorizontal: 15,
-    paddingVertical: 5,
-    marginHorizontal: 5,
-    fontSize: 16,
-    color: '#1a2c48',
-  },
   infoContainer: {
     marginTop: 60,
     paddingHorizontal: 15,
@@ -211,12 +155,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20,
-    alignItems: 'center', 
+    alignItems: 'center',
   },
   configButton: {
     alignItems: 'center',
-    marginHorizontal: 0,
     flex: 1,
+    paddingHorizontal: 5,
+    paddingVertical: 10,
+    minHeight: 90,
   },
   configCircle: {
     width: 60,
@@ -242,6 +188,8 @@ const styles = StyleSheet.create({
     color: '#333',
     marginTop: 10,
     textAlign: 'center',
+    flexWrap: 'wrap',
+    maxWidth: 80,
   },
   editPatientButton: {
     width: 50,
@@ -280,4 +228,4 @@ const styles = StyleSheet.create({
 },
 });
 
-export default PatientInfoPage;
+export default EvolutionPage;
