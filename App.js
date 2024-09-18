@@ -1,11 +1,11 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import Login from './components/Login';
+import EvolutionFormAnotations from './components/EvolutionFormAnotations';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Login/>
+      <EvolutionFormAnotations/>
     </SafeAreaView> 
   );
 };

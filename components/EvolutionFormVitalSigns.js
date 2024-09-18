@@ -21,57 +21,65 @@ const EvolutionFormVitalSigns = () => {
       <View style={styles.formContainer}>
       <Text style={styles.descriptionText}>Sinais Vitais:</Text>
 
-        <Text style={styles.label}>Frequência Cardíaca *</Text>
+        <Text style={styles.label}>Frequência Cardíaca</Text>
         <TextInput
           placeholder="Frequência Cardíaca (bpm)"
           style={styles.inputField}
           placeholderTextColor="#a9a9a9"
         />
 
-        <Text style={styles.label}>Frequência Respiratória *</Text>
+        <Text style={styles.label}>Frequência Respiratória</Text>
         <TextInput
           placeholder="Frequência Respiratória (ipm)"
           style={styles.inputField}
           placeholderTextColor="#a9a9a9"
         />
 
-        <Text style={styles.label}>Pressão Arterial *</Text>
+        <Text style={styles.label}>Pressão Arterial</Text>
         <TextInput
           placeholder="Sistólica/Diastólica (mmHg)"
           style={styles.inputField}
           placeholderTextColor="#a9a9a9"
         />
 
-        <Text style={styles.label}>Hemoglobina Glicada *</Text>
+        <Text style={styles.label}>Hemoglobina Glicada</Text>
         <TextInput
           placeholder="HGT"
           style={styles.inputField}
           placeholderTextColor="#a9a9a9"
         />
 
-        <Text style={styles.label}>Temperatura *</Text>
+        <Text style={styles.label}>Temperatura</Text>
         <TextInput
           placeholder="Temperatura"
           style={styles.inputField}
           placeholderTextColor="#a9a9a9"
         />
 
-        <Text style={styles.label}>Saturação de Oxigênio *</Text>
+        <Text style={styles.label}>Saturação de Oxigênio</Text>
         <TextInput
           placeholder="Saturação de Oxigênio"
           style={styles.inputField}
           placeholderTextColor="#a9a9a9"
         />
 
+        <Text style={styles.label}>Ingestão Total de Líquidos</Text>
+        <TextInput
+          placeholder="Ingestão Total (ml)"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
+
+        <Text style={styles.label}>Saída Total de Líquidos</Text>
+        <TextInput
+          placeholder="Saída Total (ml)"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
+
         <View style={styles.footer}>
-          <Text style={styles.stepText}>Passo 1 | 5</Text>
+          <Text style={styles.stepText}>Passo 1 | ?</Text>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-              <Image
-                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}
-                style={styles.footerBackIcon}
-              />
-            </TouchableOpacity>
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
               <Image
                 source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}

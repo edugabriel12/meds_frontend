@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
-
-const EvolutionFormWaterBalance = () => {
+const EvolutionFormAnotations = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
@@ -19,24 +18,42 @@ const EvolutionFormWaterBalance = () => {
       </View>
 
       <View style={styles.formContainer}>
-      <Text style={styles.descriptionText}>Balanço Hídrico:</Text>
+      <Text style={styles.descriptionText}>Registro Médico:</Text>
 
-        <Text style={styles.label}>Ingestão Total de Líquidos *</Text>
+      <Text style={styles.label}>Estado Atual</Text>
         <TextInput
-          placeholder="Ingestão Total (ml)"
-          style={styles.inputField}
+          style={[styles.inputField, { height: 100 }]}
           placeholderTextColor="#a9a9a9"
-        />
+          multiline={true}
+          numberOfLines={5}
+      />
 
-        <Text style={styles.label}>Saída Total de Líquidos * </Text>
+      <Text style={styles.label}>Tratamento Vigente</Text>
         <TextInput
-          placeholder="Saída Total (ml)"
-          style={styles.inputField}
+          style={[styles.inputField, { height: 100 }]}
           placeholderTextColor="#a9a9a9"
-        />
+          multiline={true}
+          numberOfLines={5}
+      />
+
+      <Text style={styles.label}>Exames Laboratoriais</Text>
+        <TextInput
+          style={[styles.inputField, { height: 100 }]}
+          placeholderTextColor="#a9a9a9"
+          multiline={true}
+          numberOfLines={5}
+      />
+
+      <Text style={styles.label}>Pendências</Text>
+        <TextInput
+          style={[styles.inputField, { height: 100 }]}
+          placeholderTextColor="#a9a9a9"
+          multiline={true}
+          numberOfLines={5}
+      />
 
         <View style={styles.footer}>
-          <Text style={styles.stepText}>Passo 3 | 5</Text>
+          <Text style={styles.stepText}>Passo 5 | 5</Text>
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
               <Image
@@ -44,11 +61,8 @@ const EvolutionFormWaterBalance = () => {
                 style={styles.footerBackIcon}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-              <Image
-                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}
-                style={styles.nextBackIcon}
-              />
+            <TouchableOpacity style={styles.finishButton}>
+              <Text style={styles.finishButtonText}>Finalizar</Text>  
             </TouchableOpacity>
           </View>
         </View>
@@ -149,6 +163,20 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: '#f0f0f0',
   },
+  pickerContainer: {
+    width: '100%',
+    height: 50,
+    marginBottom: 25,
+    borderRadius: 25,
+    borderColor: '#ddd',
+    borderWidth: 1,
+    backgroundColor: '#f0f0f0',
+    justifyContent: 'center',
+  },
+  picker: {
+    width: '100%',
+    height: '100%',
+  },
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -198,6 +226,24 @@ const styles = StyleSheet.create({
     height: 24,
     tintColor: '#fff',
   },
+  finishButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: '#1a2c48',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+    marginRight: 20,
+    paddingHorizontal: 20,
+    minWidth: 110,
+  },
+  finishButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
 
-export default EvolutionFormWaterBalance;
+export default EvolutionFormAnotations;

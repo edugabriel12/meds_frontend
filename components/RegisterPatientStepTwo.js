@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Switch, Dimensions, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView, Linking } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 
 const PatientSignUpFormTwo = () => {
-  const [isAddressVisible, setIsAddressVisible] = useState(false);
-
-  const toggleAddressVisibility = () => setIsAddressVisible(previousState => !previousState);
+  const [selectedState, setSelectedState] = useState("Estável");
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -23,72 +22,61 @@ const PatientSignUpFormTwo = () => {
       </View>
 
       <View style={styles.formContainer}>
-        <View style={styles.toggleContainer}>
-          <Image source={require("../images/silhueta-de-icone-de-casa.png")} style={styles.icon} />
-          <Text style={styles.toggleLabel}>Adicionar Endereço ?</Text>
-          <Switch
-            trackColor={{ false: "#767577", true: "#1a2c48" }}
-            thumbColor={isAddressVisible ? "#1a2c48" : "#f4f3f4"}
-            onValueChange={toggleAddressVisibility}
-            value={isAddressVisible}
-          />
+        <Text style={styles.label}>Data de Admissão *</Text>
+        <TextInput
+          placeholder="dd/mm/yy"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
+
+        <Text style={styles.label}>Motivo de internação</Text>
+        <TextInput
+          placeholder="Motivo de internação"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
+
+        <Text style={styles.label}>Comorbidades</Text>
+        <TextInput
+          placeholder="Comorbidades"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
+
+        <View style={styles.cidContainer}>
+          <Text style={styles.label}>CID</Text>
+          <TouchableOpacity onPress={() => Linking.openURL('https://pebmed.com.br/cid10/')}>
+            <Text style={styles.cidLink}>Consultar CID?</Text>
+          </TouchableOpacity>
+        </View>
+        <TextInput
+          placeholder="Código - Descrição"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
+
+        <Text style={styles.label}>Leito</Text>
+        <TextInput
+          placeholder="Leito do paciente"
+          style={styles.inputField}
+          placeholderTextColor="#a9a9a9"
+        />
+
+        <Text style={styles.label}>Estado</Text>
+        <View style={styles.pickerContainer}>
+          <Picker
+            selectedValue={selectedState}
+            onValueChange={(itemValue, itemIndex) => setSelectedState(itemValue)}
+            style={styles.picker}
+          >
+            <Picker.Item label="Estável" value="Estável" />
+            <Picker.Item label="Alerta" value="Alerta" />
+            <Picker.Item label="Crítico" value="Crítico" />
+          </Picker>
         </View>
 
-        {isAddressVisible && (
-          <>
-            <Text style={styles.label}>Rua *</Text>
-            <TextInput
-              placeholder="Rua"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Número *</Text>
-            <TextInput
-              placeholder="Número"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Bairro *</Text>
-            <TextInput
-              placeholder="Bairro"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Complemento</Text>
-            <TextInput
-              placeholder="Complemento"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>CEP *</Text>
-            <TextInput
-              placeholder="CEP"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Cidade *</Text>
-            <TextInput
-              placeholder="Cidade"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-
-            <Text style={styles.label}>Estado *</Text>
-            <TextInput
-              placeholder="Estado"
-              style={styles.inputField}
-              placeholderTextColor="#a9a9a9"
-            />
-          </>
-        )}
-
         <View style={styles.footer}>
-          <Text style={styles.stepText}>Passo 2 | 3</Text>
+          <Text style={styles.stepText}>Passo 2 | 2</Text>
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
               <Image
@@ -96,11 +84,8 @@ const PatientSignUpFormTwo = () => {
                 style={styles.footerBackIcon}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-              <Image
-                source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}
-                style={styles.nextBackIcon}
-              />
+            <TouchableOpacity style={styles.finishButton}>
+              <Text style={styles.finishButtonText}>Finalizar</Text>  
             </TouchableOpacity>
           </View>
         </View>
@@ -138,16 +123,6 @@ const styles = StyleSheet.create({
     height: 28,
     tintColor: '#1a2c48',
   },
-  nextBackIcon: {
-    width: 28,
-    height: 28,
-    tintColor: '#fff',
-  },
-  icon: {
-    width: 24,
-    height: 24,
-    tintColor: '#1a2c48',
-  },
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
@@ -165,32 +140,21 @@ const styles = StyleSheet.create({
     maxWidth: 350,
     paddingTop: 100,
   },
-  toggleContainer: {
+  cidContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '100%',
-    marginBottom: 20,
-    paddingHorizontal: 10,
-    paddingVertical: 15,
-    borderRadius: 25,
-    backgroundColor: '#fff',
-    borderColor: '#ddd',
-    borderWidth: 1,
   },
   label: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#1a2c48',
-    flex: 1,
     marginBottom: 10,
   },
-  toggleLabel: {
-    fontSize: 16,
-    fontWeight: 'bold',
+  cidLink: {
+    fontSize: 14,
     color: '#1a2c48',
-    flex: 1,
-    marginLeft: 10,
+    textDecorationLine: 'underline',
   },
   inputField: {
     width: '100%',
@@ -214,7 +178,20 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: -20,
+  },
+  pickerContainer: {
+    width: '100%',
+    height: 50,
+    marginBottom: 25,
+    borderRadius: 25,
+    borderColor: '#ddd',
+    borderWidth: 1,
+    backgroundColor: '#f0f0f0',
+    justifyContent: 'center',
+  },
+  picker: {
+    width: '100%',
+    height: '100%',
   },
   backButton: {
     width: 50,
@@ -245,6 +222,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 10,
+  },
+  finishButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: '#1a2c48',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+    paddingHorizontal: 20,
+    minWidth: 110,
+  },
+  finishButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   navIcon: {
     width: 24,

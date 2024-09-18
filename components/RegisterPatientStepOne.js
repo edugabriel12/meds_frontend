@@ -49,41 +49,6 @@ const PatientSignUpFormOne = ({ navigation }) => {
           </Picker>
         </View>
 
-        <Text style={styles.label}>Cartão SUS *</Text>
-        <TextInput
-          placeholder="Número do seu cartão SUS"
-          style={styles.inputField}
-          placeholderTextColor="#a9a9a9"
-        />
-
-        <Text style={styles.label}>Número de Celular *</Text>
-        <TextInput
-          placeholder="Seu número de celular"
-          style={styles.inputField}
-          placeholderTextColor="#a9a9a9"
-        />
-
-        <Text style={styles.label}>Contato de Emergência</Text>
-        <TextInput
-          placeholder="Número do contato de emergência"
-          style={styles.inputField}
-          placeholderTextColor="#a9a9a9"
-        />
-
-        <Text style={styles.label}>Altura *</Text>
-        <TextInput
-          placeholder="Altura em cm"
-          style={styles.inputField}
-          placeholderTextColor="#a9a9a9"
-        />
-
-        <Text style={styles.label}>Peso *</Text>
-        <TextInput
-          placeholder="Peso em kg"
-          style={styles.inputField}
-          placeholderTextColor="#a9a9a9"
-        />
-
         <Text style={styles.label}>Data de Nascimento *</Text>
         <TextInput
           placeholder="dd/mm/yy"
@@ -92,7 +57,7 @@ const PatientSignUpFormOne = ({ navigation }) => {
         />
 
         <View style={styles.footer}>
-          <Text style={styles.stepText}>Passo 1 | 3 </Text>
+          <Text style={styles.stepText}>Passo 1 | 2 </Text>
           <TouchableOpacity style={styles.nextButton}>
             <Image
               source={{ uri: 'https://cdn-icons-png.flaticon.com/512/271/271228.png' }}
