@@ -24,24 +24,6 @@ const PatientInfoPage = ({ navigation }) => {
 
         <View style={styles.infoContainer}>
           <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Altura</Text>
-            <Text style={styles.infoValue}>182 cm</Text>
-          </View>
-          <View style={styles.underline} />
-
-          <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Peso</Text>
-            <Text style={styles.infoValue}>78 kg</Text>
-          </View>
-          <View style={styles.underline} />
-
-          <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Telefone</Text>
-            <Text style={styles.infoValue}>87 4002-8922</Text>
-          </View>
-          <View style={styles.underline} />
-
-          <View style={styles.infoRow}>
             <Text style={styles.infoLabel}>Data de Admissão</Text>
             <Text style={styles.infoValue}>19/08/2024</Text>
           </View>
@@ -54,7 +36,7 @@ const PatientInfoPage = ({ navigation }) => {
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require('../images/prontuario-medico.png')}
+                  source={require('../assets/images/prontuario-medico.png')}
                   style={styles.configIcon}
                 />
               </View>
@@ -63,7 +45,7 @@ const PatientInfoPage = ({ navigation }) => {
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require('../images/stethoscope.png')}
+                  source={require('../assets/images/stethoscope.png')}
                   style={styles.configIcon}
                 />
               </View>
@@ -92,7 +74,7 @@ const PatientInfoPage = ({ navigation }) => {
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require('../images/galeria-de-imagens.png')}
+                  source={require('../assets/images/galeria-de-imagens.png')}
                   style={styles.configIcon}
                 />
               </View>
@@ -101,7 +83,7 @@ const PatientInfoPage = ({ navigation }) => {
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require('../images/x.png')}
+                  source={require('../assets/images/x.png')}
                   style={styles.configIcon}
                 />
               </View>

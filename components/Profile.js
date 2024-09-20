@@ -12,7 +12,7 @@ const ProfileScreen = ({ navigation }) => {
                             style={styles.menuIcon}
                         />
                     </TouchableOpacity>
-                    <Image source={require('../images/doctor.png')} style={styles.icon} />
+                    <Image source={require('../assets/images/doctor.png')} style={styles.icon} />
                     <Text style={styles.headerTitle}>Meds</Text>
                 </View>
 
@@ -30,7 +30,7 @@ const ProfileScreen = ({ navigation }) => {
                         <View style={styles.statCardHeaderPatients}>
                             <Text style={styles.statCardTitle}>Pacientes</Text>
                             <Image
-                                source={require('../images/patient.png')}
+                                source={require('../assets/images/patient.png')}
                                 style={styles.statCardIcon}
                             />
                         </View>
@@ -40,7 +40,7 @@ const ProfileScreen = ({ navigation }) => {
                         <View style={styles.statCardHeaderPlan}>
                             <Text style={styles.statCardTitle}>Plano</Text>
                             <Image
-                                source={require('../images/black-star-silhouette.png')}
+                                source={require('../assets/images/black-star-silhouette.png')}
                                 style={styles.statCardIcon}
                             />
                         </View>
@@ -54,7 +54,7 @@ const ProfileScreen = ({ navigation }) => {
                         <TouchableOpacity style={styles.configButton}>
                             <View style={styles.configPremiumCircle}>
                                 <Image
-                                    source={require('../images/black-star-silhouette.png')}
+                                    source={require('../assets/images/black-star-silhouette.png')}
                                     style={styles.configPremiumIcon}
                                 />
                             </View>
@@ -72,7 +72,7 @@ const ProfileScreen = ({ navigation }) => {
                         <TouchableOpacity style={styles.configButton}>
                             <View style={styles.configCircle}>
                                 <Image
-                                    source={require('../images/cadeado-trancado.png')}
+                                    source={require('../assets/images/cadeado-trancado.png')}
                                     style={styles.configIcon}
                                 />
                             </View>
@@ -83,7 +83,7 @@ const ProfileScreen = ({ navigation }) => {
                         <TouchableOpacity style={styles.configButton}>
                             <View style={styles.configCircle}>
                                 <Image
-                                    source={require('../images/packard-bell.png')}
+                                    source={require('../assets/images/packard-bell.png')}
                                     style={styles.configIcon}
                                 />
                             </View>
@@ -92,7 +92,7 @@ const ProfileScreen = ({ navigation }) => {
                         <TouchableOpacity style={styles.configButton}>
                             <View style={styles.configCircle}>
                                 <Image
-                                    source={require('../images/documento.png')}
+                                    source={require('../assets/images/documento.png')}
                                     style={styles.configIcon}
                                 />
                             </View>
@@ -101,7 +101,7 @@ const ProfileScreen = ({ navigation }) => {
                         <TouchableOpacity style={styles.configButton}>
                             <View style={styles.configCircle}>
                                 <Image
-                                    source={require('../images/x.png')}
+                                    source={require('../assets/images/x.png')}
                                     style={styles.configIcon}
                                 />
                             </View>

@@ -12,7 +12,7 @@ const SignUpFormTwo = ({ navigation }) => {
           />
         </TouchableOpacity>
         <Image
-          source={require('../images/doctor.png')}
+          source={require('../assets/images/doctor.png')}
           style={styles.icon}
         />
         <Text style={styles.headerTitle}>Meds</Text>

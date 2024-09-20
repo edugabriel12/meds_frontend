@@ -38,7 +38,7 @@ const EvolutionPage = ({ navigation }) => {
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require("../images/heart-rate.png")}
+                  source={require("../assets/images/heart-rate.png")}
                   style={styles.configIcon}
                 />
               </View>
@@ -47,7 +47,7 @@ const EvolutionPage = ({ navigation }) => {
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require("../images/paciente.png")}
+                  source={require("../assets/images/paciente.png")}
                   style={styles.configIcon}
                 />
               </View>
@@ -56,7 +56,7 @@ const EvolutionPage = ({ navigation }) => {
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require("../images/gota-de-agua.png")}
+                  source={require("../assets/images/gota-de-agua.png")}
                   style={styles.configIcon}
                 />
               </View>
@@ -65,7 +65,7 @@ const EvolutionPage = ({ navigation }) => {
             <TouchableOpacity style={styles.configButton}>
               <View style={styles.configCircle}>
                 <Image
-                  source={require("../images/medical-services.png")}
+                  source={require("../assets/images/medical-services.png")}
                   style={styles.configIcon}
                 />
               </View>

@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
                             style={styles.menuIcon}
                         />
                     </TouchableOpacity>
-                    <Image source={require('../images/doctor.png')} style={styles.icon} />
+                    <Image source={require('../assets/images/doctor.png')} style={styles.icon} />
                     <Text style={styles.headerTitle}>Meds</Text>
                     <Image
                         source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
@@ -35,14 +35,14 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.actionsContainer}>
                     <TouchableOpacity style={styles.actionButton}>
                         <Image
-                            source={require('../images/stethoscope.png')}
+                            source={require('../assets/images/stethoscope.png')}
                             style={styles.actionIcon}
                         />
                         <Text style={styles.actionText}>Nova Evolução</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.actionButton}>
                         <Image
-                            source={require('../images/patient.png')}
+                            source={require('../assets/images/patient.png')}
                             style={styles.actionIcon}
                         />
                         <Text style={styles.actionText}>Novo Paciente</Text>

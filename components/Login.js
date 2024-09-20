@@ -5,14 +5,14 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require('../images/doctor.png')} style={styles.icon} />
+        <Image source={require('../assets/images/doctor.png')} style={styles.icon} />
         <Text style={styles.headerTitle}>Meds</Text>
       </View>
 
       <View style={styles.card}>
         <Text style={styles.loginTitle}>Login</Text>
         <TextInput
-          placeholder="Seu CPF ou e-mail"
+          placeholder="Seu CPF"
           style={styles.inputField}
           placeholderTextColor="#a9a9a9"
         />
